@@ -1,26 +1,22 @@
 * {
   margin: 0;
   padding: 0;
-  /* position: relative; */
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 html {
   height: 100%;
 }
 body {
   width: 100%;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  font-family: "Poppins", sans-serif;
 }
 div {
   max-width: 100%;
 }
-h1 {
+h2 {
   font-weight: 100;
   text-align: center;
-}
-i {
-  width: 2px;
 }
 /* -----header------ */
 .header {
@@ -51,6 +47,9 @@ i {
 .main-bar img {
   padding-left: 1%;
 }
+.main-bar span {
+  display: none;
+}
 
 .logo {
   text-decoration: solid;
@@ -77,12 +76,13 @@ i {
   margin-left: 4%;
   margin-right: 4%;
 }
-marquee{
+marquee {
   font-size: 12px;
-  color:rgb(94, 94, 94);
+  color: rgb(94, 94, 94);
 }
 /* ---------- Quick Book----------- */
 .quick-book {
+  position: relative;
   width: 100%;
   height: 250px;
   background-image: url("img/red-bbg.png");
@@ -102,17 +102,16 @@ marquee{
 }
 .quick-book-content ul li {
   list-style: none;
-
 }
 .quick-book-content a {
   text-decoration: none;
   color: #fff;
   font-weight: 100;
-  padding: 0%  ;
+  padding: 0%;
 }
 
 #qb-link1 {
-  border-bottom:2px solid #fff  ;
+  border-bottom: 2px solid #fff;
 }
 #qb-link2 {
   opacity: 70%;
@@ -124,31 +123,17 @@ marquee{
   white-space: pre;
 }
 .qb-div2 {
+  position: absolute;
   width: 72%;
-  padding: 2% 1%;
+  padding: 6% 1%;
+  padding-bottom: 3%;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
-input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-  opacity: 60%;
-  display: block;
-  background:url("img/calendar.svg") no-repeat;
-  height: 20px;
-  width: 20px;
-}
-#date-start[type="datetime-local"]::-webkit-calendar-picker-indicator {
-  position: absolute; 
-  left: 21%;
-}
-#date-end[type="datetime-local"]::-webkit-calendar-picker-indicator {
-  position: absolute; 
-  left: 35%;
-}
-input::-webkit-datetime-edit-fields-wrapper {
-  position: relative;
-  left: 20%;
-}
-.qb-div2 input,.qb-div2 select, .qb-div2 button{
+
+.qb-div2 input,
+.qb-div2 select,
+.qb-div2 button {
   width: 20%;
   height: 32px;
   /* padding: 4px; */
@@ -156,8 +141,27 @@ input::-webkit-datetime-edit-fields-wrapper {
   border-radius: 16px;
   cursor: pointer;
 }
-#select-location{
+#select-location {
   width: 16%;
+}
+/* --- changing the position of date picker--- */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  display: block;
+  background: url("img/calendar.svg") no-repeat;
+  height: 20px;
+  width: 20px;
+}
+#date-start[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 21%;
+}
+#date-end[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 44.5%;
+}
+input::-webkit-datetime-edit-fields-wrapper {
+  position: relative;
+  left: 16%;
 }
 
 #btn-search {
@@ -170,21 +174,23 @@ input::-webkit-datetime-edit-fields-wrapper {
   border-radius: 24px;
 }
 
-.qb-div2 img{
+.qb-div2 img {
   height: 32px;
   /* padding-left: 1%; */
 }
 #btn-quick-book {
-  background:none;
+  background: none;
   border: 1px solid #f8f8f8;
-  /* margin-left: 16px; */
-  padding-left: 10%;
-  padding-right: 10%;
+  color: #f8f8f8;
+  /* padding-left: 10%;
+  padding-right: 10%; */
 }
 .qb-download {
+  position: absolute;
   width: 100%;
   padding-left: 1%;
   display: flex;
+  bottom: 10px;
 }
 .qb-download button {
   background-color: #000000;
@@ -196,42 +202,72 @@ input::-webkit-datetime-edit-fields-wrapper {
 }
 .qb-download span {
   font-size: large;
-  font-weight:100;
+  font-weight: 100;
   align-content: center;
+}
+.qb-download-res {
+  display: none;
 }
 /* ---------Summer Promotion--------- */
 .promotion-div {
+  position: relative;
   width: 100%;
-  height: 536px;
-  background-image: url("img/summer-promotion-bg.png");
+  height: fit-content;
+  border-radius: 16px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 16px;
+}
+.promotion-div img {
+  width: 100%;
+  display: block;
 }
 
 .promotion-div span {
+  position: absolute;
   text-align: left;
-  font-size: 22px;
-  line-height: 1%;
-  padding-top: 24%;
-  padding-left: 36%;
-  width: 100%;
-  display: block;
+  left: 39%;
+  top: 56%;
+  font-size: 18px;
+  width: max-content;
+  display: inline-block;
   line-height: 16px;
 }
 
 #gift-voucher {
   background-color: #009046;
-  font-size: 22px;
-  padding: 1px 32px;
+  font-size: 18px;
+  padding: 1px 24px;
   border: 1px solid #009046;
   border-radius: 24px;
   color: #f8f8f8;
 }
+
+.slider-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.btn-control {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(190, 190, 190, 0.5);
+  cursor: pointer;
+}
+
+.btn-control.active {
+  background-color: white;
+}
+
 /* ---------Popular Cars----------- */
 
-.popular-cars h1  {
+.popular-cars h2 {
   padding: 20px 0px;
   text-align: center;
   padding-bottom: 1%;
@@ -268,11 +304,11 @@ input::-webkit-datetime-edit-fields-wrapper {
 
 .car-details {
   padding: 4%;
-    padding-bottom: 0;
-    text-align: left;
-    font-size: medium;
-    box-sizing: border-box;
-    position: relative;
+  padding-bottom: 0;
+  text-align: left;
+  font-size: medium;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .car-details h2 {
@@ -309,15 +345,16 @@ input::-webkit-datetime-edit-fields-wrapper {
 /* ----------- Subscribe --------- */
 .subscribe-download-div {
   width: 100%;
+  margin: 2%;
 }
 .subscribe-div {
   width: 50%;
   max-height: 100%;
   float: left;
-  padding: 80px 10px;
+  padding: 140px 10px;
   padding-left: 88px;
 }
-.subscribe-div h1 {
+.subscribe-div h2 {
   text-align: left;
   width: 75%;
 }
@@ -374,7 +411,6 @@ input::-webkit-datetime-edit-fields-wrapper {
   padding-bottom: 16px;
   font-weight: 500;
   font-size: 16px;
-  
 }
 #download-form input {
   border: none;
@@ -414,11 +450,11 @@ input::-webkit-datetime-edit-fields-wrapper {
   display: table;
   width: 100%;
 }
-.rent-leash-div h1 {
+.rent-leash-div h2 {
   padding: 54px;
 }
 .three-steps {
-  column-count: 3;
+  columns: 3;
   margin: 0px 72px;
 }
 .step-number {
@@ -454,7 +490,7 @@ input::-webkit-datetime-edit-fields-wrapper {
   padding: 24px;
   padding-bottom: 80px;
 }
-.locations-div h2{
+.locations-div h2 {
   padding-bottom: 54px;
 }
 .place {
@@ -466,30 +502,25 @@ input::-webkit-datetime-edit-fields-wrapper {
 .place .material-symbols-outlined {
   color: #e21e26;
   padding-right: 2px;
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
-  'GRAD' 200,
-  'opsz' 24
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 24;
 }
-.place p{
+.place p {
   font-size: 16px;
   width: 125px;
-  
 }
 #remove {
   border-right: none;
   padding-right: 72px;
-}
+} 
 /* ------- FAQ ------- */
 .FAQ {
   padding: 88px;
 }
-.FAQ h1 {
+.FAQ h2 {
   padding: 16px;
 }
 
-.accordion-content{
+.accordion-content {
   cursor: pointer;
   height: max-content;
   border-bottom: 2px solid rgb(167, 167, 167);
@@ -500,13 +531,12 @@ input::-webkit-datetime-edit-fields-wrapper {
 }
 .question::after {
   content: "\002B";
-  font-size: 2rem;
-  font-weight: lighter;
+  font-size: 20px;
   position: absolute;
   right: 10rem;
 }
 .question.active::after {
- transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .FAQ .answer {
   max-height: 0;
@@ -520,7 +550,7 @@ input::-webkit-datetime-edit-fields-wrapper {
   padding-left: 0rem;
   line-height: 1.5rem;
   border-top: 1px solid;
-  border-image: linear-gradient(to right, transparent, #FFFFFF, transparent) 1;
+  border-image: linear-gradient(to right, transparent, #ffffff, transparent) 1;
 }
 
 /* ---- footer --- */
@@ -599,3 +629,292 @@ span {
   text-decoration: underline;
 }
 /* ------responsive------ */
+@media only screen and (max-width: 700px) {
+  body {
+    font-size: 12px;
+  }
+  h2 {
+    padding-left: 8px;
+    left: 0px;
+    font-size: 16px;
+  }
+  /* --- header --- */
+  .header {
+    height: 80px;
+  }
+  .logo img {
+    margin-left: auto;
+    max-width: 50%;
+  }
+  .header-social img {
+    display: none;
+  }
+
+  .main-bar a {
+    display: none;
+  }
+  .main-bar span {
+    display: inline-block;
+  }
+  /* --- main body --- */
+  .main-body {
+    margin-left: 6px;
+    margin-right: 8px;
+  }
+  /* quick book */
+  .quick-book {
+    display: none;
+  }
+  .qb-download-res {
+    display: block;
+    width: auto;
+    height: 121px;
+    background-image: url("img/red-bbg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    margin: 2%;
+  }
+  .qb-download-res button {
+    background-color: #000000;
+    padding: 8px 16px;
+    /* align-items: center; */
+    border: 1px solid #f8f8f8;
+    border-radius: 24px;
+    margin-left: 4px;
+  }
+  .qb-download-res span {
+    font-size: 13px;
+    padding: 30%;
+    text-align: center;
+    font-weight: 100;
+  }
+  /* summer promotion */
+  .promotion-div{
+    width: 98%;
+  }
+  .promotion-div img {
+    width: 100%;
+    /* margin: 20px 0px 0px -120px; */
+  }
+  .promotion-div p span {
+    font-size: 9.5px;
+    left: 33%;
+  }
+  #gift-voucher {
+    font-size: 9.5px;
+    padding: 1px 8px;
+  }
+  /* popular cars --- unfinished*/
+  .popular-cars h2 {
+    padding: 8px;
+    text-align: left;
+    font-size: 16px;
+    padding-bottom: 1%;
+  }
+
+  .cars-scroll {
+    width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-bottom: 2%;
+  }
+
+  .cars {
+    display: inline-block;
+    width: 63%;
+    border: 1px solid rgb(159, 159, 159);
+    margin-right: 2%;
+    box-sizing: border-box;
+    white-space: normal;
+  }
+
+  .car-details {
+    padding: 4%;
+    padding-bottom: 0;
+    text-align: left;
+    font-size: 12px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .car-details ul li {
+    padding-top: 12%;
+    padding-bottom: 12%;
+  }
+  .car-details button {
+    background-color: #e21e26;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    position: absolute;
+    right: 45px;
+    bottom: 18px;
+  }
+ 
+  /* location */
+  .locations-div {
+    width: auto;
+    height: 32%;
+    padding: 2px;
+    padding-bottom: 10px;
+  }
+  .locations-div h2 {
+    position: relative;
+    left: 0px;
+    padding-bottom: 16px;
+  }
+  .place {
+    border-right: none;
+    display: inline-flex;
+    padding-left: 8px;
+  }
+ 
+  .place p {
+    font-size: 12px;
+    width: max-content;
+  }
+/* sub - download */
+
+.subscribe-div {
+  width: 100%;
+  max-height: 100%;
+  float: none;
+}
+.subscribe-div h2 {
+  width: auto;
+}
+#subscribe-form {
+  padding-top: 32px;
+}
+#subscribe-form input {
+  padding-right: 20%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+}
+
+/* download */
+.download-div {
+  width: auto;
+  height: 100%;
+  padding: 6%;
+}
+.get-in-on button {
+  padding: 4%;
+  margin-bottom: 4%;
+  font-size: 10px;
+}
+/* rent or leash in 3 steps */
+.rent-leash-div{
+  position: relative;
+}
+.step-number {
+  display: grid;
+  position: absolute;
+}
+.three-steps{
+  display:table;
+}
+.step-number img{
+ padding-left: 42%;
+  padding-bottom: 48%;
+}
+.step1-col,
+.step2-col{
+  margin-top: 18%;
+  margin-bottom: 25%;
+}
+
+  /* faq */
+  .FAQ {
+    position: relative;
+    padding: 8px;
+    padding-bottom: 16px;
+  }
+  .FAQ h2 {
+    padding-left: 8px;
+    left: 0px;
+    position: absolute;
+    font-size: 16px;
+  }
+  .accordion {
+    padding-top: 34px;
+  }
+  .accordion-content {
+    cursor: pointer;
+    height: max-content;
+    border-bottom: 2px solid rgb(167, 167, 167);
+    padding: 10px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    height: 24%;
+  }
+  .question::after {
+    content: "\002B";
+    font-size: 16px;
+    position: absolute;
+    right: 2rem;
+  }
+  /* ----- footer--- */
+  footer {
+    max-height: max-content;
+    width: auto;
+    background-color: #000;
+    display: block;
+  }
+  
+  .footer-content1 {
+    width: 100%;
+    padding: 40px 0px 0px 8px;
+    display: inline-flex;
+    padding-bottom: 4%;
+  }
+  .footer-row {
+    width: auto;
+    display: inline-flex;
+  }
+  .footer-logo1 {
+    padding-right: 4vh;
+    width: 32vh;
+  }
+  span {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1px;
+  }
+  .footer-link1 {
+    width: auto;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 8px;
+    line-height: 32px;
+  }
+  .footer-link1 a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: max-content;
+  }
+  .footer-link1 a:hover {
+    text-decoration: underline;
+  }
+  
+  .follow-us {
+    width: 42vh;
+    padding-left: 2vh;
+  }
+  .follow-us span {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 8px;
+    height: 1vh;
+  }
+  .follow-us a {
+    display: inline;
+    padding: 1%;
+    padding-left: 0%;
+  }
+
+}
