@@ -8,7 +8,7 @@ html {
 }
 body {
   width: 100%;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }
 div {
@@ -17,6 +17,9 @@ div {
 h2 {
   font-weight: 100;
   text-align: center;
+}
+button{
+  cursor: pointer;
 }
 /* -----header------ */
 .header {
